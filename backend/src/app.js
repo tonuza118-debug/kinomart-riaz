@@ -41,6 +41,13 @@ app.get('/api/:table', requireTable, async (req, res) => {
   try {
     const sql = `SELECT * FROM ${table} ORDER BY created_at ASC${limit ? ' LIMIT $1' : ''}`;
     const { rows } = limit ? await pool.query(sql, [limit]) : await pool.query(sql);
+    // Cache reads at Vercel's edge for 30s, serving a stale copy for up to
+    // 5 more minutes while it revalidates in the background. This is what
+    // actually protects most visitors from cold-start/Neon-wake latency —
+    // only one request per 30s window ever reaches this function at all.
+    // Admin writes (POST/PATCH/DELETE below) are never cached, so changes
+    // still show up within ~30s via the frontend's existing polling.
+    res.set('Cache-Control', 'public, s-maxage=30, stale-while-revalidate=300');
     res.json({ data: rows, error: null });
   } catch (err) {
     res.status(500).json({ data: null, error: { message: err.message } });
