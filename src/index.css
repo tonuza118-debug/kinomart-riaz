@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* Custom @font-face specifically targeting all numbers (ASCII 0-9 & Bengali ০-৯) with Hind Siliguri Bold (700) */
+@font-face {
+  font-family: 'Hind Siliguri Bold Digits';
+  src: url("https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_4uE.ttf") format("truetype"),
+       local("Hind Siliguri Bold"),
+       local("HindSiliguri-Bold");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0030-0039, U+09E6-09EF;
+}
+
+@layer base {
+  * {
+    font-family: 'Hind Siliguri Bold Digits', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html, body {
+    background-color: #FDFBF7;
+    color: #1F241E;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overscroll-behavior-y: auto;
+    touch-action: pan-x pan-y;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* GPU acceleration for mobile modals and sliders to prevent white flashes */
+  .animate-fadeIn, .fixed, .absolute {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+}
+
+/* Custom scrollbar hiding helper */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Floating Contact Pulse & Ring Animations */
+@keyframes whatsappPulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.75), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes callPulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(94, 106, 69, 0.75), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(94, 106, 69, 0), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(94, 106, 69, 0), 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes iconWobble {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  10% { transform: rotate(-15deg) scale(1.15); }
+  20% { transform: rotate(15deg) scale(1.15); }
+  30% { transform: rotate(-10deg) scale(1.1); }
+  40% { transform: rotate(10deg) scale(1.1); }
+  50%, 90% { transform: rotate(0deg) scale(1); }
+}
+
+/* High-Conversion Order Now Button Animations */
+@keyframes orderPulseScale {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 6px 18px rgba(94, 106, 69, 0.45);
+  }
+  50% {
+    transform: scale(1.035);
+    box-shadow: 0 10px 28px rgba(94, 106, 69, 0.75), 0 0 15px rgba(245, 158, 11, 0.5);
+  }
+}
+
+@keyframes orderShimmerLight {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  20%, 100% {
+    transform: translateX(300%) skewX(-20deg);
+  }
+}
+
+@keyframes zapIconPop {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  50% {
+    transform: scale(1.3) rotate(12deg);
+    filter: drop-shadow(0 0 6px #FBBF24);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsappPulseRing 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.animate-call-pulse {
+  animation: callPulseRing 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.animate-icon-wobble {
+  animation: iconWobble 2.5s infinite ease-in-out;
+}
+
+.animate-order-btn {
+  animation: orderPulseScale 2s infinite ease-in-out;
+}
+
+.animate-order-shimmer {
+  animation: orderShimmerLight 3s infinite ease-in-out;
+}
+
+.animate-zap-pop {
+  animation: zapIconPop 1.5s infinite ease-in-out;
+}
+
+/* Explicit Li Ador Noirrit font classes */
+.font-ador, .font-norit, .font-ador-norit {
+  font-family: 'Li Ador Noirrit', 'Li Ador Noirrit Digits', 'Hind Siliguri', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+

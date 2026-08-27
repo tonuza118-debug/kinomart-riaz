@@ -1,0 +1,6 @@
+{
+  "name": "KinoMart",
+  "description": "কীনোমার্ট - সেরা গ্যাজেট ও প্রিমিয়াম ইলেকট্রনিক্স অনলাইন শপ ও অ্যাডমিন ম্যানেজমেন্ট প্যানেল",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

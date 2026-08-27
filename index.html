@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>KinoMart - সেরা গ্যাজেট ও প্রিমিয়াম ইলেকট্রনিক্স</title>
+    <link rel="preconnect" href="https://pub-5b578dfe75d2479c8a74e0953fe58b53.r2.dev" crossorigin>
+    <link rel="dns-prefetch" href="https://pub-5b578dfe75d2479c8a74e0953fe58b53.r2.dev">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="dns-prefetch" href="https://supabase.co">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Tag Manager / GA4 Data Layer Initialization -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <!--
+        Instant first-paint skeleton. This is plain HTML/CSS with no JS dependency, so
+        it renders immediately (even on a slow/new device before the JS bundle has
+        downloaded or run), then gets replaced the moment React mounts. This removes
+        the "blank white screen" that otherwise shows on first visits.
+      -->
+      <style>
+        #app-skeleton{background:#FDFBF7;min-height:100vh}
+        #app-skeleton .sk-header{height:60px;background:#FAF9F5;border-bottom:2px solid #E8E3D9;display:flex;align-items:center;padding:0 16px;gap:12px}
+        #app-skeleton .sk-logo{width:36px;height:36px;border-radius:9999px;background:#E8E3D9}
+        #app-skeleton .sk-bar{height:14px;border-radius:6px;background:#E8E3D9}
+        #app-skeleton .sk-hero{max-width:1280px;margin:12px auto;height:180px;border-radius:20px;background:#EFECE6}
+        #app-skeleton .sk-grid{max-width:1280px;margin:0 auto;padding:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+        @media (min-width:768px){#app-skeleton .sk-grid{grid-template-columns:repeat(4,1fr)}}
+        #app-skeleton .sk-card{aspect-ratio:0.8;border-radius:16px;background:#EFECE6}
+        #app-skeleton .sk-pulse{animation:sk-pulse 1.4s ease-in-out infinite}
+        @keyframes sk-pulse{0%,100%{opacity:1}50%{opacity:.6}}
+      </style>
+      <div id="app-skeleton" class="sk-pulse">
+        <div class="sk-header">
+          <div class="sk-logo"></div>
+          <div class="sk-bar" style="width:120px"></div>
+        </div>
+        <div class="sk-hero"></div>
+        <div class="sk-grid">
+          <div class="sk-card"></div>
+          <div class="sk-card"></div>
+          <div class="sk-card"></div>
+          <div class="sk-card"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Prevent pinch zoom gestures on iOS Safari
+      document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+      });
+      document.addEventListener('gesturechange', function (e) {
+        e.preventDefault();
+      });
+      document.addEventListener('gestureend', function (e) {
+        e.preventDefault();
+      });
+      // Prevent multi-touch pinch zoom
+      document.addEventListener('touchstart', function (e) {
+        if (e.touches.length > 1) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
